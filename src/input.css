@@ -1,0 +1,285 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.container{
+    @apply max-w-[90rem] p-6 w-full mx-auto
+}
+
+@layer components{
+    .header{
+        @apply bg-light shadow-md relative mb-10;
+    }
+    .branding{
+        @apply md:flex items-center gap-12;
+    }
+    .branding img{
+        @apply w-[3rem]
+    }
+    .branding .header__navd{
+        @apply hidden md:flex md:gap-10;
+    }
+    .branding .header__navd li a{
+        @apply font-medium text-sm text-dark hover:text-berde active:text-berde;
+    }
+    
+    .header__action{
+        @apply bg-light absolute top-[6.2rem] right-0 w-0 h-[90vh] px-0 pt-0 overflow-hidden transition-all shadow-md
+        md:static md:h-fit md:w-fit md:shadow-none;
+    }
+    .header__action.open{
+        @apply w-[80%] px-10 pt-10 transition-all;
+    }
+    .header__action .header__navm{
+        @apply border-b-gray-400 border-b-[2px] pb-5 flex flex-col gap-5 md:hidden;
+    }
+    .header__action .header__navm li:hover a{
+        @apply text-berde;
+    }
+    .header__action .header__navm li a{
+        @apply font-medium text-xl text-dark;
+    }
+    .header__action .header__btn a{
+        @apply flex gap-[1rem] items-center hover:text-berde;
+    }
+    .header__action .header__btn{
+        @apply pt-5 flex flex-col gap-3 md:flex-row-reverse md:p-2;
+    }
+    .header__action .header__kamote{
+        @apply flex gap-5;
+    }
+    .burgir__menu{
+        @apply md:hidden;
+    }
+    .burgir__menu span{
+        @apply w-[1.5rem] h-[.2rem] bg-gray-700 block rounded-full transition-all;
+    }
+    .burgir__menu span:nth-child(2){
+        @apply my-1;
+    }
+    .header__wrapper{
+        @apply flex items-center justify-between;
+    }
+    .burgir__menu.open span:first-child{
+        @apply transform translate-y-[10px] rotate-[225deg] transition-all;
+    }
+    .burgir__menu.open span:nth-child(2){
+        @apply opacity-0 transition-all;
+    }
+    .burgir__menu.open span:last-child{
+        @apply transform translate-y-[-4px] rotate-[-225deg] transition-all;
+    }
+}
+
+
+.banner{
+    @apply p-0;
+}
+.banner__wrapper{
+    @apply md:max-w-[80rem] p-0 w-full mx-auto;
+}
+.banner__cards{
+    @apply flex flex-col gap-10;
+}
+
+
+.banner__card img{
+    @apply w-auto h-auto;
+}
+.banner__left{
+    @apply md:w-[50%];
+}
+.banner__right{
+    @apply  p-5 text-center self-center md:w-[50%]; 
+}
+.banner__right ul{
+    @apply flex flex-col gap-5;
+}
+.banner .banner__right h2{
+    @apply font-medium text-4xl text-center;
+} 
+.banner .banner__right h3{
+    @apply font-medium text-lg;
+}
+.banner .banner__right p{
+    @apply text-xl;
+}
+.banner .banner__wrapper .banner__card:nth-child(even){
+    @apply flex flex-col-reverse md:flex-row-reverse;
+}
+.banner .banner__wrapper .banner__card:nth-child(odd){
+    @apply flex flex-col md:flex-row;
+}
+
+
+
+.links{
+    @apply pt-6 border-t-2;
+}
+.links__item ul{
+    @apply max-h-[0rem] overflow-hidden transition-all flex flex-col gap-6 md:max-h-[50rem] md:pt-6;
+}
+.links__item ul.open{
+    @apply max-h-[50rem] pt-6 transition-all;
+}
+.links__item ul li a{
+    @apply text-gray-500 hover:text-dark;
+}
+.links__item h4{
+    @apply flex items-center justify-between font-semibold hover:cursor-pointer;
+}
+.links__wrapper{
+    @apply flex flex-col gap-10 md:grid md:grid-cols-6 md:max-w-[80rem] md:p-0 md:w-full md:mx-auto;
+}
+.links__item h4 i{
+    @apply transition-all md:hidden;
+}
+.links__item h4 i.open{
+    @apply transform rotate-180 transition-all;
+}
+
+
+
+.footer__wrapper{
+    @apply flex flex-col gap-6 border-t-2 py-6 md:max-w-[80rem] p-0 w-full mx-auto;
+}
+.footer__social ul{
+   @apply flex flex-row gap-3;
+}
+.footer__social ul i{
+    @apply bg-dark text-light px-2 py-2 rounded-full;
+}
+.footer__items ul{
+    @apply flex flex-col gap-3 text-sm md:flex-row md:gap-0;
+}
+.footer__items li{
+    @apply md:px-6 md:border-r-2
+}
+.footer__items li:first-child{
+    @apply md:px-0 md:pr-6;
+}
+.footer__items ul li:last-child{
+    @apply md:border-r-0
+}
+
+.footer__items ul li{
+    @apply hover:underline 
+}
+.footer__credit p{
+    @apply text-xs text-gray-500;
+}
+
+/* REWARD BANNER */
+.rBanner{
+    @apply bg-sBanner min-h-[600px] bg-cover bg-lberde bg-right-bottom flex text-center md:text-left md:items-center md:bg-starBanner md:bg-left;
+}
+.rBanner__wrapper{
+    @apply flex flex-col items-center gap-3 md:items-start;
+}
+.rBanner h1{
+    @apply text-2xl w-[50%]
+}
+.rBanner p{
+    @apply text-sm 
+}
+.rBanner a{
+    @apply underline hover:no-underline
+}
+
+
+
+/* GETTING STARTED */
+.started__wrapper{
+    @apply py-8 md:px-8 md:flex md:flex-col md:items-center
+}
+.started__title{
+    @apply flex flex-col items-center gap-3 
+}
+.started h2{
+    @apply font-semibold text-xl;
+}
+.started p{
+    @apply text-sm;
+}
+.started__contents{
+    @apply flex flex-col gap-6 mt-10 md:grid md:grid-cols-3 md:justify-items-center;
+}
+
+.started__step{
+    @apply flex flex-row gap-5 md:flex md:flex-col md:justify-center md:items-center md:gap-4 md:max-w-[50%]
+}
+.started__step h3{
+    @apply text-xl bg-transparent border-berde border-[.1rem] max-w-11 text-berde px-[.9rem] py-[.3rem] rounded-full;
+}
+.started__step h4{
+    @apply font-semibold md:text-center;
+}
+.started__step li{
+    @apply md:px-6;
+}
+.started__step ul{
+    @apply flex flex-col gap-4 md:text-center md:w-[200%]
+}
+
+/* COFFEE TAB */
+
+.coffee__nav{
+    @apply bg-gray-100 pt-10;
+}
+.coffee__nav h4{
+    @apply text-2xl font-semibold text-center;
+}
+.coffee__nav ul{
+    @apply flex items-center justify-center mt-6;
+}
+.coffee__nav ul li{
+    @apply px-4 pb-3 border-b-4 border-transparent;
+}
+.coffee__nav ul li.active{
+    @apply border-b-4 border-berde;
+}
+.coffee__nav ul li a{
+    @apply text-lg font-semibold;
+}
+.coffee__tab{
+    @apply bg-blue-100 relative h-[500px] md:h-[250px];
+}
+.coffee__item{
+    @apply absolute opacity-0 transition-all top-8 px-4 md:grid  md:grid-cols-[_2fr,_2fr] md:items-center md:max-w-[40rem] md:left-[30%];
+}
+.coffee__item.active{
+    @apply opacity-100 transition-all;
+}
+.coffee__text h5{
+    @apply text-xl font-semibold text-center;
+}
+.coffee__text p{
+    @apply text-center text-sm;
+}
+.coffee__text{
+    @apply flex flex-col gap-4 mt-4;
+}
+
+
+
+
+@layer utilities{
+    .btn{
+        @apply inline-block py-[.5rem] px-[1rem] rounded-full border-transparent border-[1px] text-sm font-medium hover:scale-[1.1];
+    }
+    .btn.bg--dark{
+        @apply bg-dark text-light;
+    }
+    .btn.bg--berde{
+        @apply  bg-berde text-light md:w-[10%] md:text-center no-underline;
+    }
+    .btn.bg--light{
+        @apply bg-light text-dark border-dark border-[1px];
+    }
+    .btn.bg--transparent{
+        @apply bg-transparent text-dark font-medium border-dark border-[1px];
+    }
+    .btn.bg--transparent-light{
+        @apply bg-transparent text-light font-medium border-light border-[1px];
+    }
+}
